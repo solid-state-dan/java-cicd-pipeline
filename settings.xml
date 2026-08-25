@@ -1,0 +1,36 @@
+<settings>
+
+        <servers>
+          <server>
+            <id>ssd-ssd-repo</id>
+            <username>aws</username>
+            <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
+          </server>
+        </servers>
+
+        <profiles>
+          <profile>
+            <id>ssd-ssd-repo</id>
+            <activation>
+              <activeByDefault>true</activeByDefault>
+            </activation>
+            <repositories>
+              <repository>
+                <id>ssd-ssd-repo</id>
+                <url>https://ssd-277207922372.d.codeartifact.eu-south-1.amazonaws.com/maven/ssd-repo/</url>
+              </repository>
+            </repositories>
+          </profile>
+        </profiles>
+
+        <mirrors>
+          <mirror>
+            <id>ssd-ssd-repo</id>
+            <name>ssd-ssd-repo</name>
+            <url>https://ssd-277207922372.d.codeartifact.eu-south-1.amazonaws.com/maven/ssd-repo/</url>
+            <mirrorOf>*</mirrorOf>
+          </mirror>
+        </mirrors>
+
+</settings>
+
