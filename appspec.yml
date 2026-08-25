@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: /target/java-cicd-pipeline.war
-    destination: /usr/share/tomcat/webapps/
+  - source: target/java-cicd-pipeline.war # REMOVED the leading slash
+    destination: /var/lib/tomcat10/webapps/ # UPDATED to Amazon Linux 2023 native path
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh
