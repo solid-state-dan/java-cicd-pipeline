@@ -7,7 +7,9 @@ phases:
   pre_build:
     commands:
       - echo Logging in to AWS CodeArtifact...
-      - CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain ssd --domain-owner 277207922372 --region eu-south-1 --query authorizationToken --output text`
+      - AWS_ACCOUNT_ID=$(echo $CODEBUILD_BUILD_ARN | cut -f5 -d ":")
+      - echo "Extracted Account ID is $AWS_ACCOUNT_ID"
+      - CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain ssd --domain-owner $AWS_ACCOUNT_ID --region eu-south-1 --query authorizationToken --output text`
       - export CODEARTIFACT_AUTH_TOKEN
   build:
     commands:
