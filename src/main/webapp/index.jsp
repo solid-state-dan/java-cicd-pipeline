@@ -130,6 +130,10 @@
             <span class="status-pulse"></span>
             LIVE ON EC2
         </div>
+	<div class="status-badge">
+            <span class="status-pulse"></span>
+            LIVE ON CODEPIPELINE
+        </div>
 
         <h1>Welcome to my Web App!</h1>
         <p class="lead">This page is successfully served from an Amazon EC2 instance.</p>
